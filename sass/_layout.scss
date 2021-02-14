@@ -1,19 +1,25 @@
 .container {
   max-width: 120rem; // our container can decrease in size if we don't have 120rem to display. In that case, it fits the screen 100% vw
   margin: 8rem auto;
-  background-color: var(--color-grey-light-2);
-  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3); // setting large blur of 6rem for shadow to stand out
+  background-color: var(--color-grey-light-1);
+  //box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3); // setting large blur of 6rem for shadow to stand out
+  box-shadow: var(--shadow-dark);
   //min-height for testing
   min-height: 50rem;
 }
 
 .header {
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--color-grey-light-2);
 }
 .content {
 }
 
 .sidebar {
+  background-color: var(--color-grey-dark-1);
 }
 
 .hotel-view {
+  background-color: #fff;
 }
