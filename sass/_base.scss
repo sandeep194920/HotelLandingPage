@@ -16,6 +16,42 @@ Grey dark 3: #999
 
 */
 
+/*
+CSS CUSTOM PROPERTIES / CSS VARIABLES
+
+* We can now use CSS custom variables and dont have to rely on SAAS variables
+
+* Whats wrong with SAAS vatiables? Why to use CSS Custom props?
+
+  -> Well, we dont need the preprocessor in that case (no need to convert saas variables to css)
+  -> Not only that, they can be manipulated  in javascript and we can also edit them in devtools
+  -> It's easy to use css variables in CALC functions. Css variables also cascade and are inherited. So they are very differnt from SAAS variables in that regard
+
+*/
+
+// css custom props need to be defined inside a scope (declaration block) just like *{}. We can put css variables in any selector, but then it will be available only on that element and their children
+// Also, we need a central place where we define these css variables. This place can generally be the root pseudo class
+
+// root is a pseudo class which is just like html{} selector but with higher specificity.
+// Props here apply to the entire document or webapp and will be available to all the child elements
+
+//   we consume the custom props using var keyword
+:root {
+  // we use --name-of-the-property. works very similar to normal css property
+  --color-primary: #eb2f64;
+  --color-primary-light: #ff3366;
+  --color-primary-dark: #ba265d;
+
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -40,4 +76,18 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 1.6;
+  // we consume the custom props using var keyword
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  background-size: cover;
+
+  // since body height at this point is small, the background repeats itself vertically, so let's eliminate that
+  background-repeat: no-repeat;
+
+  // let's increase our height of the body now.
+  min-height: 100vh; // minimum will be 100vh. If body increases than 100vh then height also increases. Note that we can remove background-repeat property since height is set to 100vh and it wont repeat, but lets keep it
+  color: var(--color-grey-dark-2);
 }
