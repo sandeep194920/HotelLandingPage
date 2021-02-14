@@ -19,5 +19,17 @@ Grey dark 3: #999
   margin: 0;
   padding: 0; }
 
+*,
+*:after,
+*:before {
+  /* instead of setting this border-box setting on all elements here(*), you should define this in html so that you can use inherit in * (here) for all elements to inherit from html */
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
 body {
-  background-color: #eb2f64; }
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6; }

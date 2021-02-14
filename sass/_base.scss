@@ -21,6 +21,23 @@ Grey dark 3: #999
   padding: 0;
 }
 
+*,
+*:after,
+*:before {
+  /* instead of setting this border-box setting on all elements here(*), you should define this in html so that you can use inherit in * (here) for all elements to inherit from html */
+  box-sizing: inherit;
+}
+
+html {
+  // good practice to set it here and then all elements will inherit this as and when they load (defined in *{} above)
+  box-sizing: border-box;
+  //it should be in % rather than px so that user can change it in the browser when zooms in or out. Default is 16px but we need a % equal to 10px which is 10/16 which is 62.5%
+  font-size: 62.5%; //1rem = 10px, 10px/16px = 62.5%. 16px is the browser default. Taking it as 10px as base font-size makes it easy for our calculation
+}
+
 body {
-  background-color: #eb2f64;
+  // Open Sans coming from google fonts
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
 }
