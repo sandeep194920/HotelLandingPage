@@ -15,7 +15,31 @@
   </head>
   <body>
     <div class="container">
-      <header class="header">Header part</header>
+      <header class="header">
+        <img class="logo" src="img/logo.png" alt="Logo" />
+        <form class="search" action="#">
+          <input
+            class="search__input"
+            type="text"
+            placeholder="Search hotels"
+          />
+          <button class="search__button">
+            <!-- Unlike everytime where we used to use icon fonts, lets use svg icons. Remember, svg icons are more
+            efficient than icon fonts so consider using them always. SVG means scalable vector graphics and its the code writing for vector graphics -->
+
+            <!-- Use icomoon.io for svg. Select Add icons from library link at the bottom of the page and u find many icons. We are 
+            using Entypo icon category here. Select icons you want and then click on "Select Svg and more". Click on setting gear and desect png, we only want svg.
+            Now press download link. We need Symbol defs file. For full explanation watch Video "Building the header part 1"
+
+          -->
+            <!-- This is how we include svg file. sprite file is the one will have all icons and we select particuar icon from there -->
+            <!-- This xlink href works only in webservers -->
+            <svg class="search__icon">
+              <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+            </svg>
+          </button>
+        </form>
+      </header>
       <div class="content">
         <nav class="sidebar">Navigation</nav>
         <main class="hotel-view">Hotel View</main>

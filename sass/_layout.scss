@@ -26,4 +26,7 @@
 .hotel-view {
   background-color: #fff;
   background-color: orangered;
+  // flex-basis: 100% is same as flex-grow : 1  is same as width : 100% I believe
+  flex: 1; // setting flex-grow to 1. This means, saying it to occupy entire remaining space of content;
+  //Note: You can certainly use width  on a flex item; however, it is considered best practice to use the flex  property since we are sizing flex elements.
 }
